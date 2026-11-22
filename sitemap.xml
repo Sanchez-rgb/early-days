@@ -49,6 +49,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sanchez-rgb.github.io/early-days/about.html</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://sanchez-rgb.github.io/early-days/privacy.html</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>yearly</changefreq>
