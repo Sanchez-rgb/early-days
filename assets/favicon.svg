@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Early Days">
+  <rect width="512" height="512" fill="#111110"/>
+  <rect x="146" y="132" width="34" height="248" fill="#FAFAF8"/>
+  <rect x="146" y="132" width="224" height="34" fill="#FAFAF8"/>
+  <rect x="146" y="239" width="172" height="30" fill="#FAFAF8"/>
+  <rect x="146" y="346" width="224" height="34" fill="#FAFAF8"/>
+  <rect x="96" y="420" width="320" height="10" fill="#5EEAD4"/>
+</svg>

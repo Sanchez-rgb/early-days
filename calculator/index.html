@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Corrected Age Calculator for Premature Babies — Early Days</title>
+  <meta name="description" content="Free corrected (adjusted) age calculator for premature babies. Enter the birth date and due date to get corrected age in weeks and days, plus how many weeks early.">
+  <link rel="canonical" href="https://sanchez-rgb.github.io/early-days/calculator/">
+  <meta name="theme-color" content="#111110">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/site.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Corrected Age Calculator for Premature Babies">
+  <meta property="og:description" content="Get your baby's corrected age in weeks and days — free, private, no sign-up.">
+  <meta property="og:url" content="https://sanchez-rgb.github.io/early-days/calculator/">
+  <meta property="og:image" content="https://sanchez-rgb.github.io/early-days/assets/og.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you calculate corrected age?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Corrected age equals the baby's chronological age minus the number of days they were born before their due date. For example, a baby born 12 weeks early who is 4 months old has a corrected age of about 1 month." }
+      },
+      {
+        "@type": "Question",
+        "name": "When do you stop using corrected age?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Many pediatricians use corrected age until about 24 months, and some extend it to 36 months for very premature babies. Follow your pediatrician's guidance." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is corrected age the same as adjusted age?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Corrected age, adjusted age, and corrected gestational age all describe the same idea: age measured from the original due date instead of the birth date." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator give medical advice?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. It only does the arithmetic. It does not assess growth or development. Always follow your pediatrician." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="Early Days home">
+      <span class="mark" aria-hidden="true">E</span>
+      <span>Early Days</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="../calculator/">Corrected age</a>
+      <a href="../privacy.html">Privacy</a>
+      <a class="cta" href="../app/">Open the app</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="calc-hero">
+    <div class="wrap">
+      <p class="eyebrow">Free · Private · No sign-up</p>
+      <h1>Corrected age calculator</h1>
+      <p class="lead" style="max-width:700px">Enter your baby's birth date and original due date. You'll get the corrected (adjusted) age pediatricians use — in weeks and days — plus how early your baby arrived.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:26px">
+    <div class="wrap">
+      <div class="calc-grid">
+        <div class="calc-form">
+          <h2>Two dates</h2>
+          <p class="hint">Nothing is sent anywhere. The calculation runs in this browser.</p>
+          <form id="calc-form" novalidate>
+            <div class="field">
+              <label for="birth">Baby's date of birth</label>
+              <input type="date" id="birth" name="birth" autocomplete="off">
+              <div class="err" id="birth-err" role="alert"></div>
+            </div>
+            <div class="field">
+              <label for="due">Original due date</label>
+              <input type="date" id="due" name="due" autocomplete="off">
+              <div class="err" id="due-err" role="alert"></div>
+            </div>
+            <div class="calc-actions">
+              <button class="btn btn-primary" type="submit">Calculate</button>
+              <button class="btn btn-ghost btn-sm" type="button" id="reset">Reset</button>
+            </div>
+          </form>
+          <div class="formula">
+            <b>Corrected age</b> = actual age − days born early<br>
+            <b>Days born early</b> = due date − birth date
+          </div>
+        </div>
+
+        <div class="calc-result" aria-live="polite" id="result-card">
+          <h2>Result</h2>
+          <div id="result">
+            <p class="empty">Enter both dates to see the corrected age.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="max-width:780px;margin-top:44px">
+        <h2 style="font-size:26px;letter-spacing:-.025em">What corrected age means</h2>
+        <p style="color:var(--muted)">A baby born early has two ages. <strong style="color:var(--fg)">Chronological age</strong> counts from birth. <strong style="color:var(--fg)">Corrected age</strong> counts from the due date. For growth, feeding, and developmental milestones in the first two years, pediatricians usually use corrected age — because that is the timeline your baby's body was actually developing on.</p>
+        <p style="color:var(--muted)">Counting from birth makes a preemie look behind. Counting from the due date shows what is actually happening. Nothing about your baby changes; only the starting line does.</p>
+
+        <h2 style="font-size:26px;letter-spacing:-.025em;margin-top:36px">Example</h2>
+        <p style="color:var(--muted)">A baby born at 28 weeks — 12 weeks before the due date — is now 4 months old (about 122 days). Corrected age = 122 − 84 = 38 days, or about <strong style="color:var(--fg)">5 weeks 3 days</strong>. The baby is not “4 months behind”; they are a 5-week-old in a 4-month-old's calendar slot.</p>
+
+        <h2 style="font-size:26px;letter-spacing:-.025em;margin-top:36px">How long do you use corrected age?</h2>
+        <p style="color:var(--muted)">Many pediatricians use corrected age until about <strong style="color:var(--fg)">24 months</strong>, and some extend it to 36 months for very premature babies. Ask your own pediatrician — the cutoff varies with how early your baby was born.</p>
+
+        <div class="callout" style="border:1px solid rgba(94,234,212,.3);background:rgba(94,234,212,.06);border-radius:12px;padding:16px 18px;margin:28px 0">
+          <p style="margin:0;font-size:14.5px">This calculator only does arithmetic. It does not assess growth or development. If you are worried about your baby, contact your pediatrician.</p>
+        </div>
+      </div>
+
+      <div style="max-width:780px;margin-top:20px">
+        <h2 style="font-size:26px;letter-spacing:-.025em">Questions</h2>
+        <div class="faq">
+          <details>
+            <summary>Is corrected age the same as adjusted age?</summary>
+            <p>Yes. Corrected age, adjusted age, and corrected gestational age all describe the same idea: age measured from the original due date instead of the birth date.</p>
+          </details>
+          <details>
+            <summary>Do vaccines use corrected age?</summary>
+            <p>No. Vaccination schedules generally use chronological age. Ask your pediatrician if you are unsure.</p>
+          </details>
+          <details>
+            <summary>My baby was born after the due date. What then?</summary>
+            <p>Then the baby was not premature, and corrected age equals actual age. The calculator will show that directly.</p>
+          </details>
+          <details>
+            <summary>Why does the result say “before the due date”?</summary>
+            <p>If your baby is already born but the due date has not arrived yet, corrected age is negative. Early Days shows a countdown to the due date instead of a negative age.</p>
+          </details>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:52px">
+        <h2 style="font-size:clamp(26px,3.2vw,36px);letter-spacing:-.03em;margin:0">Want this number on your home screen?</h2>
+        <p style="color:var(--muted);max-width:560px;margin:14px auto 24px">Early Days puts corrected age first, keeps your baby's own curve, and stores everything on your device.</p>
+        <a class="btn btn-primary" href="../app/">Open Early Days — free</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="../"><span class="mark" aria-hidden="true">E</span><span>Early Days</span></a>
+        <p class="footer-note">A small independent product for families who started early. Not a medical device. Always follow your pediatrician on feeding, growth, and development.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../app/">App</a>
+        <a href="../calculator/">Corrected age calculator</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="mailto:2528128812@qq.com">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var birthEl = document.getElementById('birth');
+  var dueEl = document.getElementById('due');
+  var birthErr = document.getElementById('birth-err');
+  var dueErr = document.getElementById('due-err');
+  var result = document.getElementById('result');
+  var form = document.getElementById('calc-form');
+  var reset = document.getElementById('reset');
+  var DAY = 86400000;
+
+  function parse(v) {
+    if (!v) return null;
+    var p = v.split('-');
+    if (p.length !== 3) return null;
+    var y = +p[0], m = +p[1], d = +p[2];
+    var t = Date.UTC(y, m - 1, d);
+    var dt = new Date(t);
+    if (dt.getUTCFullYear() !== y || dt.getUTCMonth() !== m - 1 || dt.getUTCDate() !== d) return null;
+    return t;
+  }
+  function today() {
+    var n = new Date();
+    return Date.UTC(n.getFullYear(), n.getMonth(), n.getDate());
+  }
+  function fmtWd(days) {
+    var w = Math.floor(days / 7), r = days % 7;
+    return w + 'w ' + r + 'd';
+  }
+  function fmtMd(days) {
+    var m = Math.floor(days / 30.4375), r = Math.round(days - m * 30.4375);
+    if (r >= 30) { m += 1; r -= 30; }
+    return m + 'mo ' + r + 'd';
+  }
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function show(html) { result.innerHTML = html; }
+
+  function calculate(useUrl) {
+    birthErr.textContent = '';
+    dueErr.textContent = '';
+    var b = parse(birthEl.value);
+    var d = parse(dueEl.value);
+    if (birthEl.value && b === null) { birthErr.textContent = 'Please enter a valid date.'; }
+    if (dueEl.value && d === null) { dueErr.textContent = 'Please enter a valid date.'; }
+    if (b === null || d === null) {
+      show('<p class="empty">Enter both dates to see the corrected age.</p>');
+      return;
+    }
+    var now = today();
+    if (b > now) {
+      birthErr.textContent = "Birth date can't be in the future.";
+      show('<p class="empty">Check the birth date and try again.</p>');
+      return;
+    }
+    var actualDays = Math.round((now - b) / DAY);
+    var earlyDays = Math.round((d - b) / DAY);
+    var correctedDays = actualDays - earlyDays;
+
+    var main, sub, monthsRow = '', daysRow = '';
+    if (earlyDays <= 0) {
+      main = fmtWd(actualDays);
+      sub = 'Due date is on or before birth — not premature. Corrected age equals actual age.';
+    } else if (correctedDays < 0) {
+      main = 'Before due date';
+      sub = Math.abs(correctedDays) + ' days until the due date.';
+    } else {
+      main = fmtWd(correctedDays);
+      sub = 'The age pediatricians use for growth and milestones.';
+      if (correctedDays >= 60) monthsRow = '<div class="result-row"><dt>Corrected, in months</dt><dd>' + esc(fmtMd(correctedDays)) + '</dd></div>';
+      daysRow = '<div class="result-row"><dt>Corrected age in days</dt><dd>' + esc(String(correctedDays)) + '</dd></div>';
+    }
+
+    var earlyText;
+    if (earlyDays > 0) earlyText = earlyDays + ' days early (' + fmtWd(earlyDays) + ')';
+    else if (earlyDays === 0) earlyText = 'On the due date';
+    else earlyText = (-earlyDays) + ' days after the due date';
+
+    var chronological = fmtWd(actualDays) + (actualDays >= 60 ? ' (' + fmtMd(actualDays) + ')' : '');
+    var summary = 'Early Days — corrected age\nBirth: ' + birthEl.value + '\nDue: ' + dueEl.value + '\nCorrected age: ' + main + '\nActual age: ' + chronological + '\n' + earlyText;
+
+    show(
+      '<div class="result-main">' +
+        '<div class="result-label">Corrected age</div>' +
+        '<div class="result-value">' + esc(main) + '</div>' +
+        '<div class="result-foot">' + esc(sub) + '</div>' +
+      '</div>' +
+      '<dl class="result-rows">' +
+        '<div class="result-row"><dt>Chronological age</dt><dd>' + esc(chronological) + '</dd></div>' +
+        '<div class="result-row"><dt>Arrived</dt><dd>' + esc(earlyText) + '</dd></div>' +
+        monthsRow +
+        daysRow +
+      '</dl>' +
+      '<div class="calc-actions">' +
+        '<button class="btn btn-ghost btn-sm" type="button" id="copy">Copy result</button>' +
+        '<a class="btn btn-primary btn-sm" href="../app/">Open Early Days</a>' +
+      '</div>' +
+      '<p class="result-foot">Use corrected age until about 24 months, or as your pediatrician advises. This tool only does arithmetic.</p>'
+    );
+
+    var copyBtn = document.getElementById('copy');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function () {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(summary).then(function () {
+            copyBtn.textContent = 'Copied';
+            setTimeout(function () { copyBtn.textContent = 'Copy result'; }, 1600);
+          });
+        }
+      });
+    }
+
+    if (useUrl) {
+      try {
+        var u = new URL(window.location.href);
+        u.searchParams.set('birth', birthEl.value);
+        u.searchParams.set('due', dueEl.value);
+        window.history.replaceState({}, '', u.toString());
+      } catch (e) {}
+    }
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    calculate(true);
+  });
+  birthEl.addEventListener('change', function () { calculate(false); });
+  dueEl.addEventListener('change', function () { calculate(false); });
+  reset.addEventListener('click', function () {
+    birthEl.value = '';
+    dueEl.value = '';
+    birthErr.textContent = '';
+    dueErr.textContent = '';
+    show('<p class="empty">Enter both dates to see the corrected age.</p>');
+    try {
+      var u = new URL(window.location.href);
+      u.search = '';
+      window.history.replaceState({}, '', u.toString());
+    } catch (e) {}
+  });
+
+  try {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('birth')) birthEl.value = params.get('birth');
+    if (params.get('due')) dueEl.value = params.get('due');
+  } catch (e) {}
+  if (birthEl.value && dueEl.value) calculate(false);
+
+  var max = new Date();
+  var iso = max.getFullYear() + '-' + String(max.getMonth() + 1).padStart(2, '0') + '-' + String(max.getDate()).padStart(2, '0');
+  birthEl.max = iso;
+})();
+</script>
+</body>
+</html>
